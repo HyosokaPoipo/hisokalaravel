@@ -38,8 +38,20 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Hisoka Laravel</div>
             </div>
         </div>
+
+        {!! Form::text('price') !!} <br/>
+        {!! Form::text('test', 'value',[
+            'class' => 'hisoka-control',
+            'placeholder' => 'Petunjuk'
+        ])!!} <br/>
+
+        {!!Form::number('myNumber',10,
+        [ 'max' => 17,
+           'min' => -7
+        ])!!}
+
     </body>
 </html>
