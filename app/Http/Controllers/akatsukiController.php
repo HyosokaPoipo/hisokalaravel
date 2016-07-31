@@ -59,15 +59,26 @@ class akatsukiController extends Controller
     public function show($id)
     {
     	//return $id;
-    	$data = akatsuki_tables::find($id);
+    	$datas = akatsuki_tables::find($id);
     	//return $data;
 
-    	return view('akatsukiView.show')->with('data',$data);
+    	return view('akatsukiView.show')->with('showdata',$datas);
     }
 
 
     public function edit($id)
     {
 
+    }
+
+public function delete($id)
+{
+
+}
+
+    public function destroy($id)
+    {
+    	akatsuki_tables::destroy($id);
+    	return redirect()->action('akatsukiController@index');
     }
 }
