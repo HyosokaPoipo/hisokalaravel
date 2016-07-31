@@ -16,8 +16,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('test', function () {
-    return view('testview');
+Route::get('testJquery', function () {
+    return view('testviewjquery');
 });
 
 
