@@ -16,4 +16,35 @@ class akatsukiController extends Controller
 
     	return view('akatsukiView.index')->with('alldata',$isiTable);
     }
+
+
+    public function create()
+    {
+    	return view('akatsukiView.create');
+    }
+
+    public function store(Request $req)
+    {
+    	//dd($req);
+    	
+    	$data = new akatsuki_tables;
+
+    	$data->Name = $req->Name;
+    	$data->Position = $req->Position;
+    	$data->Secret_Jutsu = $req->Secret_Jutsu;
+    	$data->Parner = $req->Parner;
+
+    	$data->save();
+    	
+
+    	
+		//	cara lain :
+		//	$Input = $req->all();
+		//	$data = akatsuki_tables::Create($Input);
+    	
+
+    	//return redirect()->route('akatsukiView.index');
+		//	return "something";
+		return redirect()->action('akatsukiController@index');
+    }
 }

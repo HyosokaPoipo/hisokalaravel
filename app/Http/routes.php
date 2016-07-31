@@ -24,3 +24,5 @@ Route::get('testJquery', function () {
 Route::resource('isitabel','akatsukiController');
 
 
+
+
