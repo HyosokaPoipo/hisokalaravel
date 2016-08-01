@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Log;
 use App\Http\Requests;
 use App\akatsuki_tables;
 
@@ -11,9 +11,9 @@ class akatsukiController extends Controller
 {
     public function index()
     {
-    	$isiTable = akatsuki_tables::all();
+    	$isiTable = akatsuki_tables::get();
     	//return $isiTable;
-
+        log::info("hellow");
     	return view('akatsukiView.index')->with('alldata',$isiTable);
     }
 
@@ -66,19 +66,29 @@ class akatsukiController extends Controller
     }
 
 
-    public function edit($id)
-    {
+public function edit($id)
+{
 
-    }
+    $datas = akatsuki_tables::find($id);
+    //$test = akatsuki_tables::where("id",id)->first();
+    //return $datas;
+    return view('akatsukiView.edit',compact('input',$datas));//compact for single variable only
+
+}
 
 public function delete($id)
 {
 
 }
 
-    public function destroy($id)
-    {
-    	akatsuki_tables::destroy($id);
-    	return redirect()->action('akatsukiController@index');
-    }
+public function destroy($id)
+{
+    	//akatsuki_tables::destroy($id);
+    //dd($id);
+    $pro=akatsuki_tables::where("id", $id)->first()->delete();
+    //dd($pro);
+    return redirect()->action('akatsukiController@index');
+}
+
+
 }

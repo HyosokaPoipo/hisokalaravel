@@ -7,12 +7,12 @@
 @section('body') This is Body of Show Page <br/>
 	{!!Form::open([
 		'method' => 'delete',
-		'route'=>['isitabel.destroy', $showdata->Id]
+		'route'=>['isitabel.destroy', $showdata->id]
 		])!!}
-        Name : {{$showdata->Name}} <br/>
-		Position : {{$showdata->Position}} <br/>
-		Secret Jutsu : {{$showdata->Secret_Jutsu}} <br/>
-		Partner : {{$showdata->Parner}} <br/><br/>
+        Name : {{$showdata->name}} <br/>
+		Position : {{$showdata->position}} <br/>
+		Secret Jutsu : {{$showdata->secret_jutsu}} <br/>
+		Partner : {{$showdata->parner}} <br/><br/>
 		{!!Form::submit('Delete')!!}
        <a href="#">Edit </a>    
     {!!Form::close()!!}

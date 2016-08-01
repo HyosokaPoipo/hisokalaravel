@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class akatsuki_tables extends Model
 {
-    public $timestamps = false;
+	protected $table = 'akatsuki_tables';
+    public $timestamps = true;
 }

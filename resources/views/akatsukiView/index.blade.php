@@ -11,10 +11,11 @@
 	@foreach($alldata as $data)
 		<?php $index++; ?>
 		No : {{$index++}} <br/>
-		Name : {{$data->Name}} <br/>
-		Position : {{$data->Position}} <br/>
-		Secret Jutsu : {{$data->Secret_Jutsu}} <br/>
-		Partner : {{$data->Parner}} <br/>
+		Id : {{$data->id}} <br/>
+		Name : {{$data->name}} <br/>
+		Position : {{$data->position}} <br/>
+		Secret Jutsu : {{$data->secret_jutsu}} <br/>
+		Partner : {{$data->parner}} <br/>
 	***************************************************	<br/>
 	@endforeach
  
