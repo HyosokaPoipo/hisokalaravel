@@ -14,7 +14,7 @@
 		Secret Jutsu : {{$showdata->secret_jutsu}} <br/>
 		Partner : {{$showdata->parner}} <br/><br/>
 		{!!Form::submit('Delete')!!}
-       <a href="#">Edit </a>    
+       <a href="{{route('isitabel.edit',$showdata->id)}}">Edit </a>    
     {!!Form::close()!!}
 
 @stop

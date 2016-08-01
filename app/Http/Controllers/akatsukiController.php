@@ -72,8 +72,22 @@ public function edit($id)
     $datas = akatsuki_tables::find($id);
     //$test = akatsuki_tables::where("id",id)->first();
     //return $datas;
-    return view('akatsukiView.edit',compact('input',$datas));//compact for single variable only
+    return view('akatsukiView.edit')->with('input',$datas);;//,compact('input',$datas));//compact for single variable only
 
+}
+
+
+public function update(Request $req, $id)
+{
+    //dd($req);
+    $data = akatsuki_tables::find($id);
+    $data->name = $req->name;
+    $data->position = $req->position;
+    $data->secret_jutsu = $req->secret_jutsu;
+    $data->parner = $req->parner;
+
+    $data->save();
+    return redirect()->action('akatsukiController@index');
 }
 
 public function delete($id)
